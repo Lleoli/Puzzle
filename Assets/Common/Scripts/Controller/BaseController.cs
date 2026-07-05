@@ -30,10 +30,6 @@ public class BaseController : MonoBehaviour
 #endif
         Music.instance.Play(music);
 
-#if (UNITY_ANDROID || UNITY_IOS)
-        OnBannerChanged(AdmobController.instance.IsBannerVisible);
-        AdmobController.instance.onBannerChanged += OnBannerChanged;
-#endif
     }
 
     private void OnBannerChanged(bool visible)
@@ -62,8 +58,5 @@ public class BaseController : MonoBehaviour
 
     private void OnDestroy()
     {
-#if (UNITY_ANDROID || UNITY_IOS)
-        AdmobController.instance.onBannerChanged -= OnBannerChanged;
-#endif
     }
 }

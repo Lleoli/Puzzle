@@ -52,7 +52,7 @@ public class WinDialog : Dialog {
         if (Prefs.currentLevel < Const.NUMLEVEL - 1)
         {
             Prefs.currentLevel++;
-            CUtils.LoadScene(3, true);
+            CUtils.LoadScene(2, true);
         }
         else
         {

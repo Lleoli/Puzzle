@@ -49,7 +49,12 @@ public class HomeController : BaseController {
 
         iTween.MoveBy(playButton, iTween.Hash("amount", Vector3.right * 5, "easetype", iTween.EaseType.easeInBack, "time", 0.4f));
 
-        CUtils.LoadScene(3, true);
+        CUtils.LoadScene(2, true);
         Sound.instance.PlayButton();
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

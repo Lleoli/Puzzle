@@ -457,53 +457,23 @@ public class CUtils
 
     public static void ShowInterstitialAd()
     {
-        if (IsAdsRemoved()) return;
-
-        if (IsActionAvailable("show_ads", ConfigController.Config.interstitialAdPeriod))
-        {
-#if (UNITY_ANDROID || UNITY_IOS)
-            if (!AdmobController.instance.ShowInterstitial())
-            {
-                AdmobController.instance.RequestInterstitial();
-            }
-#endif
-        }
     }
 
     public static void ShowBannerAd()
     {
-        if (IsAdsRemoved()) return;
-
-#if (UNITY_ANDROID || UNITY_IOS)
-        AdmobController.instance.ShowBanner();
-#else
-        JobWorker.instance.onShowBanner?.Invoke();
-#endif
     }
 
     public static void CloseBannerAd()
     {
-#if (UNITY_ANDROID || UNITY_IOS)
-        AdmobController.instance.DestroyBanner();
-#else
-        JobWorker.instance.onCloseBanner?.Invoke();
-#endif
     }
 
     public static void ShowFixedBannerAd()
     {
-        if (IsAdsRemoved()) return;
-        JobWorker.instance.onShowFixedBanner?.Invoke();
     }
 
     public static bool HasBottomBanner()
     {
-        if (IsAdsRemoved()) return false;
-#if (UNITY_ANDROID || UNITY_IOS)
-        return AdmobController.instance.IsBannerVisible;
-#else
         return false;
-#endif
     }
 
     public static void SetAutoSigninGPS(int value)

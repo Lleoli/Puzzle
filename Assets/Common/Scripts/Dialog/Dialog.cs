@@ -46,13 +46,6 @@ public class Dialog : MonoBehaviour
             onDialogOpened(this);
         }
 
-        if (enableAd)
-        {
-            Timer.Schedule(this, 0.2f, () =>
-            {
-                CUtils.ShowInterstitialAd();
-            });
-        }
     }
 
     public virtual void Close()

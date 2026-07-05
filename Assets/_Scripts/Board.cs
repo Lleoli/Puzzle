@@ -9,7 +9,7 @@ public class Board : MonoBehaviour
     public int size = 4;
     public RectTransform rt;
     public Text currentMoveText, targetMoveText, bestMoveText;
-    public Text worldNameText, levelNameText;
+    public Text levelNameText;
     public Transform hintRegion, starFlyingRegion, ballRegion;
     public Transform[] headerStarTransforms;
     public Button undoButton, redoButton;
@@ -48,8 +48,7 @@ public class Board : MonoBehaviour
         bestMove = Prefs.bestMove;
         targetMove = level.targetMove;
 
-        worldNameText.text = "World " + (Prefs.currentWorld + 1);
-        levelNameText.text = "Level " + (Prefs.currentLevel + 1);
+        levelNameText.text = "关卡 " + (Prefs.currentLevel + 1);
         UpdateUndoRedoButton();
     }
 
