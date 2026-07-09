@@ -28,6 +28,7 @@ public class WinDialog : Dialog {
     {
         hideNextButton = true;
         ApplyNextButtonState();
+        HideStars();
     }
 
     private void ApplyNextButtonState()
@@ -57,10 +58,14 @@ public class WinDialog : Dialog {
 
     private IEnumerator ShowStars()
     {
+        if (hideNextButton)
+        {
+            HideStars();
+            yield break;
+        }
+
         int numStars = Prefs.GetNumStar(Prefs.currentWorld, Prefs.currentLevel);
-        stars[0].SetActive(false);
-        stars[1].SetActive(false);
-        stars[2].SetActive(false);
+        HideStars();
 
         yield return new WaitForSeconds(0.5f);
 
@@ -84,6 +89,15 @@ public class WinDialog : Dialog {
             Sound.instance.Play(starSounds[i]);
 
             yield return new WaitForSeconds(time);
+        }
+    }
+
+    private void HideStars()
+    {
+        foreach (var star in stars)
+        {
+            if (star != null)
+                star.SetActive(false);
         }
     }
 

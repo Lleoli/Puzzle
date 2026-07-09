@@ -55,7 +55,8 @@ public class Board : MonoBehaviour
     {
         currentMove = 0;
         bestMove = Prefs.bestMove;
-        targetMove = LevelMoveLimitTable.GetMoveLimit(Prefs.currentMode, Prefs.currentWorld, Prefs.currentLevel, level.targetMove);
+        if (level != null)
+            SetMoveLimitForCurrentLevel();
 
         levelNameText.text = "关卡 " + (Prefs.currentLevel + 1);
         UpdateUndoRedoButton();
@@ -70,6 +71,7 @@ public class Board : MonoBehaviour
     {
         this.level = level;
         size = level.size;
+        SetMoveLimitForCurrentLevel();
 
         int index = 0;
         for(int row = 0; row < size; row++)
@@ -162,6 +164,11 @@ public class Board : MonoBehaviour
         ball.transform.SetParent(ballRegion);
         ball.transform.localScale = Vector3.one;
         ball.transform.localPosition = startTile.localPosition;
+    }
+
+    private void SetMoveLimitForCurrentLevel()
+    {
+        targetMove = LevelMoveLimitTable.GetMoveLimit(Prefs.currentMode, Prefs.currentWorld, Prefs.currentLevel, level.targetMove);
     }
 
     private void ApplyHiddenCoin(Tile tile)
