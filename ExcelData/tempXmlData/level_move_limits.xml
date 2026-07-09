@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alllevel_move_limits>
+<level_move_limitss>
+	<level_move_limits mode="Classic" world="0" level="0" moveLimit="1">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="1" moveLimit="2">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="2" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="3" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="4" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="5" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="6" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="7" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="8" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="9" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="10" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="11" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="12" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="13" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="14" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="15" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="16" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="17" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="18" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="19" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="20" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="21" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="22" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="23" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="24" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="25" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="26" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="27" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="28" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="29" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="30" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="31" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="32" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="33" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="34" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="35" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="36" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="37" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="38" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="39" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="40" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="41" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="42" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="43" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="44" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="45" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="46" moveLimit="24">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="47" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="48" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="49" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="50" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="51" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="52" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="53" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="54" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="55" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="56" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="57" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="58" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="0" level="59" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="0" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="1" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="2" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="3" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="4" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="5" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="6" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="7" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="8" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="9" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="10" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="11" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="12" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="13" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="14" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="15" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="16" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="17" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="18" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="19" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="20" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="21" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="22" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="23" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="24" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="25" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="26" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="27" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="28" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="29" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="30" moveLimit="5">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="31" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="32" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="33" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="34" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="35" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="36" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="37" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="38" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="39" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="40" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="41" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="42" moveLimit="21">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="43" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="44" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="45" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="46" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="47" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="48" moveLimit="18">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="49" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="50" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="51" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="52" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="53" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="54" moveLimit="16">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="55" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="56" moveLimit="23">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="57" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="58" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="1" level="59" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="0" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="1" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="2" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="3" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="4" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="5" moveLimit="17">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="6" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="7" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="8" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="9" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="10" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="11" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="12" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="13" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="14" moveLimit="16">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="15" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="16" moveLimit="16">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="17" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="18" moveLimit="16">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="19" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="20" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="21" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="22" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="23" moveLimit="16">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="24" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="25" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="26" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="27" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="28" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="29" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="30" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="31" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="32" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="33" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="34" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="35" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="36" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="37" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="38" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="39" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="40" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="41" moveLimit="4">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="42" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="43" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="44" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="45" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="46" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="47" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="48" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="49" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="50" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="51" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="52" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="53" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="54" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="55" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="56" moveLimit="16">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="57" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="58" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="2" level="59" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="0" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="1" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="2" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="3" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="4" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="5" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="6" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="7" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="8" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="9" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="10" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="11" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="12" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="13" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="14" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="15" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="16" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="17" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="18" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="19" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="20" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="21" moveLimit="3">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="22" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="23" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="24" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="25" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="26" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="27" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="28" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="29" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="30" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="31" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="32" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="33" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="34" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="35" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="36" moveLimit="15">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="37" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="38" moveLimit="17">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="39" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="40" moveLimit="18">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="41" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="42" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="43" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="44" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="45" moveLimit="2">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="46" moveLimit="13">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="47" moveLimit="14">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="48" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="49" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="50" moveLimit="12">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="51" moveLimit="11">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="52" moveLimit="10">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="53" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="54" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="55" moveLimit="8">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="56" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="57" moveLimit="9">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="58" moveLimit="6">
+	</level_move_limits>
+	<level_move_limits mode="Classic" world="3" level="59" moveLimit="7">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="0" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="1" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="2" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="3" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="4" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="5" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="6" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="7" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="8" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="9" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="10" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="11" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="12" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="13" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="14" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="15" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="16" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="17" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="18" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="19" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="20" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="21" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="22" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="23" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="24" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="25" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="26" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="27" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="28" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="29" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="30" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="31" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="32" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="33" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="34" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="35" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="36" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="37" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="38" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="39" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="40" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="41" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="42" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="43" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="44" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="45" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="46" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="47" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="48" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="49" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="50" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="51" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="52" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="53" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="54" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="55" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="56" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="57" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="58" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="0" level="59" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="0" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="1" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="2" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="3" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="4" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="5" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="6" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="7" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="8" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="9" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="10" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="11" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="12" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="13" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="14" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="15" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="16" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="17" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="18" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="19" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="20" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="21" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="22" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="23" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="24" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="25" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="26" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="27" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="28" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="29" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="30" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="31" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="32" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="33" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="34" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="35" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="36" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="37" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="38" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="39" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="40" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="41" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="42" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="43" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="44" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="45" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="46" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="47" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="48" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="49" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="50" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="51" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="52" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="53" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="54" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="55" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="56" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="57" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="58" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="1" level="59" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="0" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="1" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="2" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="3" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="4" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="5" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="6" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="7" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="8" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="9" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="10" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="11" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="12" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="13" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="14" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="15" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="16" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="17" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="18" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="19" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="20" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="21" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="22" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="23" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="24" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="25" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="26" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="27" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="28" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="29" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="30" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="31" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="32" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="33" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="34" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="35" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="36" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="37" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="38" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="39" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="40" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="41" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="42" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="43" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="44" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="45" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="46" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="47" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="48" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="49" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="50" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="51" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="52" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="53" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="54" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="55" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="56" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="57" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="58" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="2" level="59" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="0" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="1" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="2" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="3" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="4" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="5" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="6" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="7" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="8" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="9" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="10" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="11" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="12" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="13" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="14" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="15" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="16" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="17" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="18" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="19" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="20" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="21" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="22" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="23" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="24" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="25" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="26" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="27" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="28" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="29" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="30" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="31" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="32" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="33" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="34" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="35" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="36" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="37" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="38" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="39" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="40" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="41" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="42" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="43" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="44" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="45" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="46" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="47" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="48" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="49" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="50" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="51" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="52" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="53" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="54" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="55" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="56" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="57" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="58" moveLimit="0">
+	</level_move_limits>
+	<level_move_limits mode="Star" world="3" level="59" moveLimit="0">
+	</level_move_limits>
+</level_move_limitss>
+</alllevel_move_limits>

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,13 +10,17 @@ public class Board : MonoBehaviour
     public RectTransform rt;
     public Text currentMoveText, targetMoveText, bestMoveText;
     public Text levelNameText;
-    public Transform hintRegion, starFlyingRegion, ballRegion;
+    public Transform hintRegion, starFlyingRegion, ballRegion, effectRegion;
     public Transform[] headerStarTransforms;
     public Button undoButton, redoButton;
+    public GameObject moveLimitExceededEffectPrefab, coinCollectEffectPrefab;
+    public float effectAutoDestroyTime = 2f;
 
     public static Board instance;
 
     private const int FirstLevelHiddenCoinReward = 99;
+    private const string MoveLimitExceededEffectName = "CFX2_EnemyDeathSkull_Ground";
+    private const string CoinCollectEffectName = "CFX2_Expression_Loving";
     private static readonly Vector3 FirstLevelHiddenCoinTilePosition = new Vector3(2, 2, 0);
 
     private List<AMove> moves = new List<AMove>();
@@ -25,6 +29,8 @@ public class Board : MonoBehaviour
     private List<Tile> pathTiles;
     private int moveBallIndex, starCollected, numStarLoaded, moveCursor = -1;
     private Level level;
+    private bool moveLimitExceeded;
+    private GameObject moveLimitExceededEffectTemplate, coinCollectEffectTemplate;
 
     private int _currentMove, _targetMove, _bestMove;
     private int currentMove
@@ -49,7 +55,7 @@ public class Board : MonoBehaviour
     {
         currentMove = 0;
         bestMove = Prefs.bestMove;
-        targetMove = level.targetMove;
+        targetMove = LevelMoveLimitTable.GetMoveLimit(Prefs.currentMode, Prefs.currentWorld, Prefs.currentLevel, level.targetMove);
 
         levelNameText.text = "关卡 " + (Prefs.currentLevel + 1);
         UpdateUndoRedoButton();
@@ -290,7 +296,12 @@ public class Board : MonoBehaviour
         ChangeTilePosition(tile, newPosition);
 
         currentMove++;
-        
+        if (IsMoveLimitExceeded())
+        {
+            OnMoveLimitExceeded(tile);
+            return;
+        }
+
         pathTiles = new List<Tile>();
         bool complete = CheckComplete();
 
@@ -342,6 +353,89 @@ public class Board : MonoBehaviour
         }
     }
 
+    private void OnMoveLimitExceeded(Tile tile)
+    {
+        if (moveLimitExceeded)
+            return;
+
+        moveLimitExceeded = true;
+        PlayMoveLimitExceededEffect(tile);
+
+        undoButton.interactable = false;
+        redoButton.interactable = false;
+
+        if (MainController.instance != null)
+            MainController.instance.OnMoveLimitExceeded();
+    }
+    private bool IsMoveLimitExceeded()
+    {
+        return targetMove > 0 && currentMove > targetMove;
+    }
+
+    private void PlayMoveLimitExceededEffect(Tile tile)
+    {
+        PlayEffect(GetMoveLimitExceededEffectTemplate(), new Vector3(0,0,0));
+    }
+
+    private void PlayCoinCollectEffect()
+    {
+        if (ball == null)
+            return;
+
+        PlayEffect(GetCoinCollectEffectTemplate(), ball.transform.position);
+    }
+
+    private GameObject GetMoveLimitExceededEffectTemplate()
+    {
+        if (moveLimitExceededEffectPrefab != null)
+            return moveLimitExceededEffectPrefab;
+
+        if (moveLimitExceededEffectTemplate == null)
+            moveLimitExceededEffectTemplate = FindSceneEffectTemplate(MoveLimitExceededEffectName);
+
+        return moveLimitExceededEffectTemplate;
+    }
+
+    private GameObject GetCoinCollectEffectTemplate()
+    {
+        if (coinCollectEffectPrefab != null)
+            return coinCollectEffectPrefab;
+
+        if (coinCollectEffectTemplate == null)
+            coinCollectEffectTemplate = FindSceneEffectTemplate(CoinCollectEffectName);
+
+        return coinCollectEffectTemplate;
+    }
+
+    private GameObject FindSceneEffectTemplate(string effectName)
+    {
+        GameObject[] objects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject obj in objects)
+        {
+            if (obj != null && obj.name == effectName && obj.scene.IsValid())
+                return obj;
+        }
+
+        return null;
+    }
+
+    private void PlayEffect(GameObject prefab, Vector3 worldPosition)
+    {
+        if (prefab == null)
+            return;
+
+        Transform parent = effectRegion != null ? effectRegion : ballRegion;
+        GameObject effect = Instantiate(prefab, worldPosition, prefab.transform.rotation);
+        effect.name = prefab.name;
+        if (parent != null)
+            effect.transform.SetParent(parent, true);
+
+        effect.SetActive(true);
+
+        if (effectAutoDestroyTime > 0)
+            Destroy(effect, effectAutoDestroyTime);
+    }
+
     private Queue<GameObject> flyingStars = new Queue<GameObject>();
 
     private void CollectHiddenCoin(Tile tile)
@@ -357,6 +451,8 @@ public class Board : MonoBehaviour
 
         if (Sound.instance != null)
             Sound.instance.Play(Sound.Others.GetStar);
+
+        PlayCoinCollectEffect();
     }
 
     private void CollectStar(GameObject star)

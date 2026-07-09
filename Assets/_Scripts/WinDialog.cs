@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,12 +7,52 @@ public class WinDialog : Dialog {
     public GameObject[] stars;
     public Text levelName;
 
+    private bool hideNextButton;
+
     protected override void Start()
     {
         base.Start();
 
         levelName.text = "level " + (Prefs.currentLevel + 1);
+        ApplyNextButtonState();
         StartCoroutine(ShowStars());
+    }
+
+    public override void Show()
+    {
+        ApplyNextButtonState();
+        base.Show();
+    }
+
+    public void SetMoveLimitExceededMode()
+    {
+        hideNextButton = true;
+        ApplyNextButtonState();
+    }
+
+    private void ApplyNextButtonState()
+    {
+        GameObject nextButton = FindChildByName(transform, "Next");
+        GameObject ImageNext = FindChildByName(transform, "ImageNext");
+        if (nextButton != null)
+            nextButton.SetActive(!hideNextButton);
+        if (ImageNext != null)
+            ImageNext.SetActive(!hideNextButton);
+    }
+
+    private GameObject FindChildByName(Transform parent, string childName)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == childName)
+                return child.gameObject;
+
+            GameObject result = FindChildByName(child, childName);
+            if (result != null)
+                return result;
+        }
+
+        return null;
     }
 
     private IEnumerator ShowStars()
@@ -49,6 +89,9 @@ public class WinDialog : Dialog {
 
     public void OnNextClick()
     {
+        if (hideNextButton)
+            return;
+
         if (Prefs.currentLevel < Const.NUMLEVEL - 1)
         {
             Prefs.currentLevel++;

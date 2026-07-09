@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -78,6 +78,22 @@ public class MainController : BaseController
         });
     }
 
+    public void OnMoveLimitExceeded()
+    {
+        if (isComplete)
+            return;
+
+        isComplete = true;
+        StopFirstLevelTutorial();
+
+        Timer.Schedule(this, 1.5f, () =>
+        {
+            WinDialog dialog = (WinDialog)DialogController.instance.GetDialog(DialogType.Win);
+            dialog.SetMoveLimitExceededMode();
+            DialogController.instance.ShowDialog(dialog);
+        });
+    }
+
     public void SkipLevel()
     {
         if (Prefs.unlockedLevel == Prefs.currentLevel)
@@ -125,14 +141,21 @@ public class MainController : BaseController
         return Prefs.currentMode == Level.LevelMode.Classic.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
     }
 
+    private void StopFirstLevelTutorial()
+    {
+        if (firstLevelTutorial != null)
+        {
+            firstLevelTutorial.StopTutorial();
+            firstLevelTutorial = null;
+        }
+    }
+
     private void CompleteFirstLevelTutorial()
     {
         if (!IsFirstLevelTutorialLevel())
             return;
 
-        if (firstLevelTutorial != null)
-            firstLevelTutorial.StopTutorial();
-
+        StopFirstLevelTutorial();
         Tutorial.SetFirstLevelTutorialDone(true);
     }
 }
