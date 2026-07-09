@@ -143,7 +143,7 @@ public class MainController : BaseController
 
     private bool ShouldShowFirstLevelTutorial()
     {
-        return IsFirstLevelTutorialLevel() && !Tutorial.IsFirstLevelTutorialDone();
+        return IsFirstLevelTutorialLevel();
     }
 
     private IEnumerator PlayCatMidPeriodically()
@@ -178,6 +178,5 @@ public class MainController : BaseController
             return;
 
         StopFirstLevelTutorial();
-        Tutorial.SetFirstLevelTutorialDone(true);
     }
 }
