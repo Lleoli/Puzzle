@@ -18,10 +18,8 @@ public class Board : MonoBehaviour
 
     public static Board instance;
 
-    private const int FirstLevelHiddenCoinReward = 99;
     private const string MoveLimitExceededEffectName = "CFX2_EnemyDeathSkull_Ground";
     private const string CoinCollectEffectName = "CFX2_Expression_Loving";
-    private static readonly Vector3 FirstLevelHiddenCoinTilePosition = new Vector3(2, 3, 0);
 
     private List<AMove> moves = new List<AMove>();
     private Tile startTile, goalTile;
@@ -90,7 +88,6 @@ public class Board : MonoBehaviour
                         tile.position = new Vector3(col, row);
                         tile.width = rt.rect.width / size;
                         tile.onTileMoveComplete += OnMoveTileComplete;
-                        ApplyHiddenCoin(tile);
 
                         tile.transform.localPosition = tile.localPosition;
                         tiles.Add(tile.position, tile);
@@ -171,35 +168,9 @@ public class Board : MonoBehaviour
         targetMove = LevelMoveLimitTable.GetMoveLimit(Prefs.currentMode, Prefs.currentWorld, Prefs.currentLevel, level.targetMove);
     }
 
-    private void ApplyHiddenCoin(Tile tile)
-    {
-        if (ShouldGiveFirstLevelHiddenCoin(tile))
-        {
-            tile.hiddenCoinReward = FirstLevelHiddenCoinReward;
-            tile.hiddenCoinRewardKey = GetHiddenCoinRewardKey(tile);
-            tile.hiddenCoinCollected = StarCurrencyController.IsBonusRewardClaimed(tile.hiddenCoinRewardKey);
-        }
-    }
-
-    private bool ShouldGiveFirstLevelHiddenCoin(Tile tile)
-    {
-        return IsStarFirstLevel() &&
-               tile != null &&
-               tile.p != null &&
-               tile.p.type == Tile.Type.Normal &&
-               tile.position == FirstLevelHiddenCoinTilePosition;
-    }
-
     private bool IsStarFirstLevel()
     {
         return Prefs.currentMode == Level.LevelMode.Star.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
-    }
-
-    private string GetHiddenCoinRewardKey(Tile tile)
-    {
-        int x = tile == null ? 0 : Mathf.RoundToInt(tile.position.x);
-        int y = tile == null ? 0 : Mathf.RoundToInt(tile.position.y);
-        return "hidden_coin_" + Prefs.currentMode + "_" + Prefs.currentWorld + "_" + Prefs.currentLevel + "_" + x + "_" + y;
     }
 
     private void SetStarPosition(Tile tile, GameObject star)
@@ -456,29 +427,6 @@ public class Board : MonoBehaviour
 
     private Queue<GameObject> flyingStars = new Queue<GameObject>();
 
-    private void CollectHiddenCoin(Tile tile)
-    {
-        if (tile == null || tile.hiddenCoinCollected || tile.hiddenCoinReward <= 0)
-            return;
-
-        string rewardKey = string.IsNullOrEmpty(tile.hiddenCoinRewardKey) ? GetHiddenCoinRewardKey(tile) : tile.hiddenCoinRewardKey;
-        if (!StarCurrencyController.TryCreditBonusStarsOnce(rewardKey, tile.hiddenCoinReward))
-        {
-            tile.hiddenCoinCollected = true;
-            return;
-        }
-
-        tile.hiddenCoinCollected = true;
-
-        if (Toast.instance != null)
-            Toast.instance.ShowMessage("+" + tile.hiddenCoinReward);
-
-        if (Sound.instance != null)
-            Sound.instance.PlayStarCollected();
-
-        PlayCoinCollectEffect();
-    }
-
     private void CollectStar(GameObject star)
     {
         Vector3 begin = star.transform.position;
@@ -541,7 +489,6 @@ public class Board : MonoBehaviour
 
         Tile tile = pathTiles[moveBallIndex];
 
-        CollectHiddenCoin(tile);
 
         if (tile.p.hasStar)
         {

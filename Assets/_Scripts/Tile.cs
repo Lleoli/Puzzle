@@ -25,12 +25,6 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     [HideInInspector]
     public GameObject star;
-    [HideInInspector]
-    public int hiddenCoinReward;
-    [HideInInspector]
-    public string hiddenCoinRewardKey;
-    [HideInInspector]
-    public bool hiddenCoinCollected;
     public Action<Tile, Vector3> onTileMoveComplete;
 
     private Vector3 moveDirect;

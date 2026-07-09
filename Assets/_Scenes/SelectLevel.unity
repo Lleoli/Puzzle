@@ -3042,6 +3042,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: VideoPlay, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 114643239222147168, guid: ccdb49ccd9aa0fe4aa3fe2f1ec164c84,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.36834908
+      objectReference: {fileID: 0}
+    - target: {fileID: 114643239222147168, guid: ccdb49ccd9aa0fe4aa3fe2f1ec164c84,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114643239222147168, guid: ccdb49ccd9aa0fe4aa3fe2f1ec164c84,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114837650649616638, guid: ccdb49ccd9aa0fe4aa3fe2f1ec164c84,
         type: 3}
       propertyPath: sceneIndex
@@ -3224,10 +3239,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 296027428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 720, y: 1270}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1101782401 stripped
 RectTransform:
