@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   size: 4
-  targetMove: 20
+  targetMove: 15
   maps:
   - type: 3
     paths: 0200000003000000
