@@ -18,6 +18,7 @@ public class ShopDialog : Dialog
 
     public Text[] rubyNumbers;
     public Text[] prices;
+    [SerializeField] private VideoPlay watchVideoPlayer;
 
     private List<shopdialog> products = new List<shopdialog>();
 
@@ -48,6 +49,38 @@ public class ShopDialog : Dialog
         OnShopItemPurchased(item, index);
     }
 
+    public void OnWatchVideoClick()
+    {
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
+
+        VideoPlay player = GetWatchVideoPlayer();
+        if (player == null)
+        {
+            ShowToast("\u672a\u914d\u7f6e\u89c6\u9891");
+            return;
+        }
+
+        Close();
+        player.PlayVideo();
+    }
+
+    private VideoPlay GetWatchVideoPlayer()
+    {
+        if (watchVideoPlayer != null)
+            return watchVideoPlayer;
+
+        VideoPlay[] players = Resources.FindObjectsOfTypeAll<VideoPlay>();
+        foreach (VideoPlay player in players)
+        {
+            if (player != null && player.gameObject.scene.IsValid())
+            {
+                watchVideoPlayer = player;
+                return watchVideoPlayer;
+            }
+        }
+
+        return null;
+    }
     private bool CanUseProduct(int index)
     {
         if (index == CatSkinIndex)

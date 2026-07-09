@@ -1560,9 +1560,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114948036553843712}
+      - m_Target: {fileID: 114138499411341004}
         m_TargetAssemblyTypeName: 
-        m_MethodName: OnClick
+        m_MethodName: OnWatchVideoClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
