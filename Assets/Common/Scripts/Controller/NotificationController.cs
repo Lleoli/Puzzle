@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.SimpleAndroidNotifications;
@@ -27,14 +27,20 @@ public class NotificationController : MonoBehaviour {
     private void OnApplicationPause(bool pause)
     {
         if (pause)
+        {
             OutGame();
+            BaseController.ClearAllLocalClientData();
+        }
         else
+        {
             InGame();
+        }
     }
 
     private void OnApplicationQuit()
     {
         OutGame();
+        BaseController.ClearAllLocalClientData();
     }
 
     private void InGame()

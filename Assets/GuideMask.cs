@@ -1,20 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GuideMask : MaskableGraphic, ICanvasRaycastFilter
+public class GuideMask : MaskableGraphic
 {
     public static GuideMask Self;
     private RectTransform _target;
     private Vector2 _targetMin;
     private Vector2 _targetMax;
     private RectTransform _targetArea;
-
-    public bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera)
-    {
-        return !RectTransformUtility.RectangleContainsScreenPoint(_targetArea, sp, eventCamera);
-    }
 
     public void Close()
     {
@@ -56,6 +51,7 @@ public class GuideMask : MaskableGraphic, ICanvasRaycastFilter
     public void Init()
     {
         _targetArea = gameObject.transform.Find("TargetArea") as RectTransform;
+        raycastTarget = true;
         Self = this;
         Close();
     }

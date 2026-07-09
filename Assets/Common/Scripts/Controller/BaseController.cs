@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -44,9 +44,26 @@ public class BaseController : MonoBehaviour
 
     public virtual void OnApplicationPause(bool pause)
     {
+        if (pause)
+        {
+            ClearAllLocalClientData();
+            return;
+        }
+
         CPlayerPrefs.Save();
     }
 
+    public virtual void OnApplicationQuit()
+    {
+        ClearAllLocalClientData();
+    }
+
+    public static void ClearAllLocalClientData()
+    {
+        CPlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
     private IEnumerator SavePrefs()
     {
         while (true)
