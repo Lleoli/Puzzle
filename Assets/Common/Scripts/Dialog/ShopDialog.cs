@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ShopDialog : Dialog
 {
     private const string CsvTablePath = "DataTable/shopdialog_source";
+    private const int MoveStepItemBonus = 3;
 
     public Text[] rubyNumbers;
     public Text[] prices;
@@ -31,6 +32,9 @@ public class ShopDialog : Dialog
         if (item == null)
             return;
 
+        if (!CanUseProduct(index))
+            return;
+
         int cost = GetItemCost(item);
         if (cost > 0 && !CurrencyController.DebitBalance(cost))
         {
@@ -40,6 +44,18 @@ public class ShopDialog : Dialog
         }
 
         OnShopItemPurchased(item, index);
+    }
+
+    private bool CanUseProduct(int index)
+    {
+        if (index != 0)
+            return true;
+
+        bool canUse = Board.instance != null && (MainController.instance == null || !MainController.instance.isComplete);
+        if (!canUse && Toast.instance != null)
+            Toast.instance.ShowMessage("当前关卡无法使用该道具");
+
+        return canUse;
     }
 
     private List<shopdialog> LoadTableRows()
@@ -134,6 +150,9 @@ public class ShopDialog : Dialog
         if (products == null || products.Count == 0)
             ApplyProducts(LoadTableRows());
 
+        if (products == null || index < 0 || index >= products.Count)
+            return null;
+
         return products[index];
     }
 
@@ -161,6 +180,13 @@ public class ShopDialog : Dialog
 
     protected virtual void OnShopItem0Effect()
     {
+        if (Board.instance != null && Board.instance.AddTargetMoves(MoveStepItemBonus))
+        {
+            if (Toast.instance != null)
+                Toast.instance.ShowMessage("步数+" + MoveStepItemBonus);
+
+            Close();
+        }
     }
 
     protected virtual void OnShopItem1Effect()

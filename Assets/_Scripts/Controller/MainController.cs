@@ -8,6 +8,11 @@ public class MainController : BaseController
     public static MainController instance;
     public bool isComplete;
     public Transform skipLevelTr, hintTr;
+    public Tutorial tutorialPrefab;
+
+    private Tutorial firstLevelTutorial;
+    private static readonly Vector3 FirstLevelTutorialTilePosition = new Vector3(2, 2, 0);
+    private static readonly Vector3 FirstLevelTutorialMoveDirection = Vector3.left;
 
     protected override void Awake()
     {
@@ -32,11 +37,14 @@ public class MainController : BaseController
         {
             skipLevelTr.transform.SetX(hintTr.transform.position.x);
         });
+
+        StartCoroutine(ShowFirstLevelTutorialIfNeeded());
     }
 
     public void OnComplete()
     {
         isComplete = true;
+        CompleteFirstLevelTutorial();
 
         if (Prefs.currentLevel == Prefs.unlockedLevel)
         {
@@ -82,5 +90,49 @@ public class MainController : BaseController
             OnComplete();
             OnBallToGoal();
         }
+    }
+
+    private IEnumerator ShowFirstLevelTutorialIfNeeded()
+    {
+        yield return null;
+
+        if (!ShouldShowFirstLevelTutorial() || tutorialPrefab == null || Board.instance == null)
+            yield break;
+
+        Tile targetTile = Board.instance.GetTileAt(FirstLevelTutorialTilePosition);
+        if (targetTile == null)
+            yield break;
+
+        firstLevelTutorial = Instantiate(tutorialPrefab);
+        Transform tutorialParent = canvasRt != null ? canvasRt : Board.instance.transform.parent;
+        if (tutorialParent != null)
+            firstLevelTutorial.transform.SetParent(tutorialParent);
+
+        firstLevelTutorial.transform.localScale = Vector3.one;
+        firstLevelTutorial.transform.SetAsLastSibling();
+
+        Vector3 dragOffset = Board.instance.transform.TransformVector(FirstLevelTutorialMoveDirection * targetTile.width);
+        firstLevelTutorial.StartDragTutorial(targetTile.transform, dragOffset);
+    }
+
+    private bool ShouldShowFirstLevelTutorial()
+    {
+        return IsFirstLevelTutorialLevel() && !Tutorial.IsFirstLevelTutorialDone();
+    }
+
+    private bool IsFirstLevelTutorialLevel()
+    {
+        return Prefs.currentMode == Level.LevelMode.Classic.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
+    }
+
+    private void CompleteFirstLevelTutorial()
+    {
+        if (!IsFirstLevelTutorialLevel())
+            return;
+
+        if (firstLevelTutorial != null)
+            firstLevelTutorial.StopTutorial();
+
+        Tutorial.SetFirstLevelTutorialDone(true);
     }
 }

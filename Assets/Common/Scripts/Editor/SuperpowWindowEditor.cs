@@ -110,6 +110,11 @@ public class SuperpowWindowEditor : EditorWindow
         PlayerPrefs.SetString("continue_play_mode", "Classic");
         PlayerPrefs.SetInt("continue_play_world", 0);
         PlayerPrefs.SetInt("continue_play_level", 0);
+        Tutorial.ResetFirstLevelTutorialDone();
+
+        CPlayerPrefs.DeleteKey(PrefKeys.CURRENT_LEVEL);
+        CPlayerPrefs.DeleteKey("unlocked_level");
+        CPlayerPrefs.DeleteKey("moved_level");
 
         foreach (string mode in modes)
         {
@@ -122,6 +127,8 @@ public class SuperpowWindowEditor : EditorWindow
                 {
                     PlayerPrefs.DeleteKey("num_star_" + mode + "_" + world + "_" + level);
                     PlayerPrefs.DeleteKey("best_move_" + mode + "_" + world + "_" + level);
+                    CPlayerPrefs.DeleteKey("num_star_level_" + level);
+                    CPlayerPrefs.DeleteKey("num_star_level_" + (level + 1));
                 }
             }
         }

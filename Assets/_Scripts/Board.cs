@@ -16,6 +16,9 @@ public class Board : MonoBehaviour
 
     public static Board instance;
 
+    private const int FirstLevelHiddenCoinReward = 99;
+    private static readonly Vector3 FirstLevelHiddenCoinTilePosition = new Vector3(2, 2, 0);
+
     private List<AMove> moves = new List<AMove>();
     private Tile startTile, goalTile;
     private GameObject ball;
@@ -79,6 +82,7 @@ public class Board : MonoBehaviour
                         tile.position = new Vector3(col, row);
                         tile.width = rt.rect.width / size;
                         tile.onTileMoveComplete += OnMoveTileComplete;
+                        ApplyHiddenCoin(tile);
 
                         tile.transform.localPosition = tile.localPosition;
                         tiles.Add(tile.position, tile);
@@ -154,6 +158,29 @@ public class Board : MonoBehaviour
         ball.transform.localPosition = startTile.localPosition;
     }
 
+    private void ApplyHiddenCoin(Tile tile)
+    {
+        if (ShouldGiveFirstLevelHiddenCoin(tile))
+        {
+            tile.hiddenCoinReward = FirstLevelHiddenCoinReward;
+            tile.hiddenCoinCollected = false;
+        }
+    }
+
+    private bool ShouldGiveFirstLevelHiddenCoin(Tile tile)
+    {
+        return IsClassicFirstLevel() &&
+               tile != null &&
+               tile.p != null &&
+               tile.p.type == Tile.Type.Normal &&
+               tile.position == FirstLevelHiddenCoinTilePosition;
+    }
+
+    private bool IsClassicFirstLevel()
+    {
+        return Prefs.currentMode == Level.LevelMode.Classic.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
+    }
+
     private void SetStarPosition(Tile tile, GameObject star)
     {
         if (tile.p.paths.Length < 2)
@@ -212,6 +239,18 @@ public class Board : MonoBehaviour
 
         UpdateUndoRedoButton();
         Sound.instance.Play(Sound.Others.Slide);
+    }
+
+    public bool AddTargetMoves(int amount)
+    {
+        if (amount <= 0)
+            return false;
+
+        if (MainController.instance != null && MainController.instance.isComplete)
+            return false;
+
+        targetMove = Mathf.Max(0, targetMove) + amount;
+        return true;
     }
 
     private void UpdateUndoRedoButton()
@@ -304,6 +343,22 @@ public class Board : MonoBehaviour
     }
 
     private Queue<GameObject> flyingStars = new Queue<GameObject>();
+
+    private void CollectHiddenCoin(Tile tile)
+    {
+        if (tile == null || tile.hiddenCoinCollected || tile.hiddenCoinReward <= 0)
+            return;
+
+        tile.hiddenCoinCollected = true;
+        CurrencyController.CreditBalance(tile.hiddenCoinReward);
+
+        if (Toast.instance != null)
+            Toast.instance.ShowMessage("+" + tile.hiddenCoinReward);
+
+        if (Sound.instance != null)
+            Sound.instance.Play(Sound.Others.GetStar);
+    }
+
     private void CollectStar(GameObject star)
     {
         Vector3 begin = star.transform.position;
@@ -364,6 +419,8 @@ public class Board : MonoBehaviour
         }
 
         Tile tile = pathTiles[moveBallIndex];
+
+        CollectHiddenCoin(tile);
 
         if (tile.p.hasStar)
         {
@@ -445,6 +502,11 @@ public class Board : MonoBehaviour
         return  path == Tile.Path.Up ? Vector3.up :
                 path == Tile.Path.Down ? Vector3.down :
                 path == Tile.Path.Left ? Vector3.left : Vector3.right;
+    }
+
+    public Tile GetTileAt(Vector3 position)
+    {
+        return GetTile(position);
     }
 
     private Tile GetTile(Vector3 position)
