@@ -14,12 +14,14 @@ public class WinDialog : Dialog {
         base.Start();
 
         levelName.text = "level " + (Prefs.currentLevel + 1);
+        ApplyResultImageState();
         ApplyNextButtonState();
         StartCoroutine(ShowStars());
     }
 
     public override void Show()
     {
+        ApplyResultImageState();
         ApplyNextButtonState();
         base.Show();
     }
@@ -27,10 +29,29 @@ public class WinDialog : Dialog {
     public void SetMoveLimitExceededMode()
     {
         hideNextButton = true;
+        ApplyResultImageState();
         ApplyNextButtonState();
         HideStars();
     }
 
+    private void ApplyResultImageState()
+    {
+        GameObject imageSuccess = FindChildByName(transform, "ImageSuccess");
+        GameObject imageSuccess0 = FindChildByName(transform, "ImageSuccessCat");
+
+        GameObject imageFailed = FindChildByName(transform, "ImageFailed");
+        GameObject imageFailed0= FindChildByName(transform, "ImageFailedCat");
+
+
+        if (imageSuccess != null)
+            imageSuccess.SetActive(!hideNextButton);
+        if (imageFailed != null)
+            imageFailed.SetActive(hideNextButton);
+        if (imageSuccess0 != null)
+            imageSuccess0.SetActive(!hideNextButton);
+        if (imageFailed0 != null)
+            imageFailed0.SetActive(hideNextButton);
+    }
     private void ApplyNextButtonState()
     {
         GameObject nextButton = FindChildByName(transform, "Next");
