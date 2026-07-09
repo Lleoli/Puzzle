@@ -122,7 +122,13 @@ public class MainController : BaseController
     {
         yield return null;
 
-        if (!ShouldShowFirstLevelTutorial() || tutorialPrefab == null || Board.instance == null)
+        if (!ShouldShowFirstLevelTutorial())
+            yield break;
+
+        if (Main.Self != null)
+            yield return Main.Self.PlayFirstLevelGuideMaskIfNeeded();
+
+        if (tutorialPrefab == null || Board.instance == null)
             yield break;
 
         Tile targetTile = Board.instance.GetTileAt(FirstLevelTutorialTilePosition);
