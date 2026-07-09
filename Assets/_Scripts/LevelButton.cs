@@ -56,7 +56,7 @@ public class LevelButton : MonoBehaviour
     public void OnClick()
     {
         Prefs.currentLevel = level;
-        CUtils.LoadScene(3, true);
+        CUtils.LoadScene(2, true);
         Sound.instance.PlayButton();
     }
 }
