@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -6,12 +6,12 @@ public class CurrencyBallance : MonoBehaviour {
     private void Start()
     {
         UpdateBalance();
-        CurrencyController.onBalanceChanged += OnBalanceChanged;
+        StarCurrencyController.onBalanceChanged += OnBalanceChanged;
     }
 
     private void UpdateBalance()
     {
-        gameObject.SetText(CurrencyController.GetBalance().ToString());
+        gameObject.SetText(StarCurrencyController.GetBalance().ToString());
     }
 
     private void OnBalanceChanged()
@@ -21,6 +21,6 @@ public class CurrencyBallance : MonoBehaviour {
 
     private void OnDestroy()
     {
-        CurrencyController.onBalanceChanged -= OnBalanceChanged;
+        StarCurrencyController.onBalanceChanged -= OnBalanceChanged;
     }
 }

@@ -51,7 +51,8 @@ public class Prefs
 
     public static void SetNumStar(int world, int level, int numStar)
     {
-        PlayerPrefs.SetInt("num_star_" + currentMode + "_" + world + "_" + level, numStar);
+        int current = GetNumStar(world, level);
+        PlayerPrefs.SetInt("num_star_" + currentMode + "_" + world + "_" + level, Mathf.Max(current, numStar));
     }
 
     public static void UnlockWorld(string mode, int world)

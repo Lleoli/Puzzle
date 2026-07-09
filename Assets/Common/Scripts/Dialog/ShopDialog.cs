@@ -8,7 +8,13 @@ using UnityEngine.UI;
 public class ShopDialog : Dialog
 {
     private const string CsvTablePath = "DataTable/shopdialog_source";
-    private const int MoveStepItemBonus = 3;
+    private const int MoveStepItemBonus = 10;
+    private const int FishPackAmount = 3;
+    private const int RouteHintIndex = 0;
+    private const int AddMovesIndex = 1;
+    private const int SkipLevelIndex = 2;
+    private const int FishPackIndex = 3;
+    private const int CatSkinIndex = 4;
 
     public Text[] rubyNumbers;
     public Text[] prices;
@@ -36,41 +42,74 @@ public class ShopDialog : Dialog
             return;
 
         int cost = GetItemCost(item);
-        if (cost > 0 && !CurrencyController.DebitBalance(cost))
-        {
-            if (Toast.instance != null)
-                Toast.instance.ShowMessage("金币不足");
+        if (!TryPayProduct(index, cost))
             return;
-        }
 
         OnShopItemPurchased(item, index);
     }
 
     private bool CanUseProduct(int index)
     {
-        if (index != 0)
+        if (index == CatSkinIndex)
+        {
+            ShowToast("\u6682\u672a\u89e3\u9501");
+            return false;
+        }
+
+        if (index == FishPackIndex)
             return true;
 
         bool canUse = Board.instance != null && (MainController.instance == null || !MainController.instance.isComplete);
-        if (!canUse && Toast.instance != null)
-            Toast.instance.ShowMessage("当前关卡无法使用该道具");
+        if (!canUse)
+        {
+            ShowToast("\u5f53\u524d\u5173\u5361\u65e0\u6cd5\u4f7f\u7528\u8be5\u9053\u5177");
+            return false;
+        }
 
-        return canUse;
+        if (index == RouteHintIndex && (Board.instance.hintBeginShowing || Board.instance.hintShowing))
+        {
+            ShowToast("\u8def\u7ebf\u63d0\u793a\u5df2\u663e\u793a");
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool TryPayProduct(int index, int cost)
+    {
+        if (cost <= 0)
+            return true;
+
+        if (index == FishPackIndex)
+        {
+            if (CurrencyController.DebitBalance(cost))
+                return true;
+
+            ShowToast("\u94bb\u77f3\u4e0d\u8db3");
+            return false;
+        }
+
+        if (StarCurrencyController.DebitBalance(cost))
+            return true;
+
+        ShowToast("\u5c0f\u9c7c\u5e72\u4e0d\u8db3");
+        return false;
     }
 
     private List<shopdialog> LoadTableRows()
     {
+        TextAsset asset = Resources.Load<TextAsset>(CsvTablePath);
+        if (asset != null)
+            return LoadCsvRows(asset.text);
+
 #if UNITY_EDITOR
         string editorCsvPath = Path.Combine(Application.dataPath, "../ExcelData/shopdialog.csv");
-        return LoadCsvRows(File.ReadAllText(editorCsvPath));
-#else
-        List<shopdialog> rows = shopdialog.LoadBytes();
-        if (rows != null)
-            return rows;
-
-        TextAsset asset = Resources.Load<TextAsset>(CsvTablePath);
-        return LoadCsvRows(asset.text);
+        if (File.Exists(editorCsvPath))
+            return LoadCsvRows(File.ReadAllText(editorCsvPath));
 #endif
+
+        List<shopdialog> rows = shopdialog.LoadBytes();
+        return rows ?? new List<shopdialog>();
     }
 
     private List<shopdialog> LoadCsvRows(string tableText)
@@ -116,9 +155,9 @@ public class ShopDialog : Dialog
             labels[row.key] = row.text;
         }
 
-        SetTextByCurrentValue("道具商店", GetLabel(labels, "shop_tab_item"));
-        SetTextByCurrentValue("引导视频", GetLabel(labels, "shop_tab_video"));
-        SetTextByCurrentValue("当前数量", GetLabel(labels, "footer_label"));
+        SetTextByCurrentValue("\u9053\u5177\u5546\u5e97", GetLabel(labels, "shop_tab_item"));
+        SetTextByCurrentValue("\u5f15\u5bfc\u89c6\u9891", GetLabel(labels, "shop_tab_video"));
+        SetTextByCurrentValue("\u5f53\u524d\u6570\u91cf", GetLabel(labels, "footer_label"));
         SetTextByCurrentValue("watch  video", GetLabel(labels, "video_button"));
         SetTextByCurrentValue("watch video", GetLabel(labels, "video_button"));
         SetTextByCurrentValue("3", GetLabel(labels, "video_cost"));
@@ -142,7 +181,6 @@ public class ShopDialog : Dialog
             if (rubyNumbers[i] != null) rubyNumbers[i].text = item.text;
             if (prices[i] != null) prices[i].text = item.price;
         }
-
     }
 
     private shopdialog GetProduct(int index)
@@ -160,19 +198,19 @@ public class ShopDialog : Dialog
     {
         switch (index)
         {
-            case 0:
+            case RouteHintIndex:
                 OnShopItem0Effect();
                 break;
-            case 1:
+            case AddMovesIndex:
                 OnShopItem1Effect();
                 break;
-            case 2:
+            case SkipLevelIndex:
                 OnShopItem2Effect();
                 break;
-            case 3:
+            case FishPackIndex:
                 OnShopItem3Effect();
                 break;
-            case 4:
+            case CatSkinIndex:
                 OnShopItem4Effect();
                 break;
         }
@@ -180,29 +218,45 @@ public class ShopDialog : Dialog
 
     protected virtual void OnShopItem0Effect()
     {
-        if (Board.instance != null && Board.instance.AddTargetMoves(MoveStepItemBonus))
-        {
-            if (Toast.instance != null)
-                Toast.instance.ShowMessage("步数+" + MoveStepItemBonus);
-
+        if (Board.instance != null && Board.instance.ShowHintFromShop())
             Close();
-        }
     }
 
     protected virtual void OnShopItem1Effect()
     {
+        if (Board.instance != null && Board.instance.AddTargetMoves(MoveStepItemBonus))
+        {
+            ShowToast("\u6b65\u6570+" + MoveStepItemBonus);
+            Close();
+        }
     }
 
     protected virtual void OnShopItem2Effect()
     {
+        if (MainController.instance == null || MainController.instance.isComplete)
+            return;
+
+        Close();
+        MainController.instance.OnComplete();
+        MainController.instance.OnBallToGoal();
     }
 
     protected virtual void OnShopItem3Effect()
     {
+        StarCurrencyController.CreditBonusStars(FishPackAmount);
+        ShowToast("\u5c0f\u9c7c\u5e72+" + FishPackAmount);
+        Close();
     }
 
     protected virtual void OnShopItem4Effect()
     {
+        ShowToast("\u6682\u672a\u89e3\u9501");
+    }
+
+    private void ShowToast(string message)
+    {
+        if (Toast.instance != null)
+            Toast.instance.ShowMessage(message);
     }
 
     private void SetTextByCurrentValue(string currentValue, string newValue)

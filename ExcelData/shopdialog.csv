@@ -1,13 +1,13 @@
 type,key,text,price,cost,active
 string,string,string,string,int,bool
-ç±»å‹,é”®,æ˜¾ç¤ºæ–‡æœ¬,ä»·æ ¼æ–‡æœ¬,æ¶ˆè€—é‡‘å¸,æ˜¯å¦å¯ç”¨
-label,shop_tab_item,é“å…·å•†åº—,,0,true
-label,shop_tab_video,å¼•å¯¼è§†é¢‘,,0,true
-label,footer_label,å½“å‰æ•°é‡,,0,true
-label,video_button,è§‚çœ‹è§†é¢‘,,0,true
-label,video_cost,3,,3,true
-product,0,é“å…·1,99$,99,true
-product,1,é“å…·2,199$,199,true
-product,2,é“å…·3,399$,399,true
-product,3,é“å…·4,599$,599,true
-product,4,é“å…·5,1199$,1199,true
+ÀàĞÍ,¼ü,ÏÔÊ¾ÎÄ±¾,¼Û¸ñÎÄ±¾,ÏûºÄÊıÁ¿,ÊÇ·ñÆôÓÃ
+label,shop_tab_item,µÀ¾ßÉÌµê,,0,TRUE
+label,shop_tab_video,Òıµ¼ÊÓÆµ,,0,TRUE
+label,footer_label,µ±Ç°ÊıÁ¿,,0,TRUE
+label,video_button,¹Û¿´ÊÓÆµ,,0,TRUE
+label,video_cost,3,,3,TRUE
+product,0,Â·ÏßÌáÊ¾,3,3,TRUE
+product,1,Ôö¼Ó10²½,6,6,TRUE
+product,2,Ìø¹ı¹Ø¿¨,24,24,TRUE
+product,3,Ğ¡Óã¸É*3,1,1,TRUE
+product,4,Ğ¡Ã¨Æ¤·ô,99,99,TRUE

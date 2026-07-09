@@ -11,37 +11,37 @@ namespace Table
     public class shopdialog
     {
         /// <summary>
-        /// 类型
+        /// ����
         /// </summary>
         [XmlAttribute("type")]
         public string type;
 
         /// <summary>
-        /// 键
+        /// ��
         /// </summary>
         [XmlAttribute("key")]
         public string key;
 
         /// <summary>
-        /// 显示文本
+        /// ��ʾ�ı�
         /// </summary>
         [XmlAttribute("text")]
         public string text;
 
         /// <summary>
-        /// 价格文本
+        /// �۸��ı�
         /// </summary>
         [XmlAttribute("price")]
         public string price;
 
         /// <summary>
-        /// 消耗金币
+        /// ��������
         /// </summary>
         [XmlAttribute("cost")]
         public int cost;
 
         /// <summary>
-        /// 是否启用
+        /// �Ƿ�����
         /// </summary>
         [XmlAttribute("active")]
         public bool active;

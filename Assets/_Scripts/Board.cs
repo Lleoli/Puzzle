@@ -454,7 +454,7 @@ public class Board : MonoBehaviour
             return;
 
         tile.hiddenCoinCollected = true;
-        CurrencyController.CreditBalance(tile.hiddenCoinReward);
+        StarCurrencyController.CreditBonusStars(tile.hiddenCoinReward);
 
         if (Toast.instance != null)
             Toast.instance.ShowMessage("+" + tile.hiddenCoinReward);
@@ -517,6 +517,7 @@ public class Board : MonoBehaviour
             }
 
             Prefs.SetNumStar(Prefs.currentWorld, Prefs.currentLevel, numstar);
+            StarCurrencyController.NotifyBalanceChanged();
 
             MainController.instance.OnBallToGoal();
             Sound.instance.Play(Sound.Others.BallEnd);
@@ -635,7 +636,7 @@ public class Board : MonoBehaviour
             return;
         }
 
-        if (usedHint || CurrencyController.DebitBalance(5))
+        if (usedHint || StarCurrencyController.DebitBalance(3))
         {
             usedHint = true;
             StartCoroutine(IESHowHint());
@@ -646,6 +647,15 @@ public class Board : MonoBehaviour
         }
     }
 
+    public bool ShowHintFromShop()
+    {
+        if (hintBeginShowing || MainController.instance.isComplete || hintShowing)
+            return false;
+
+        usedHint = true;
+        StartCoroutine(IESHowHint());
+        return true;
+    }
     public void HideHint()
     {
         foreach (Transform child in hintRegion)

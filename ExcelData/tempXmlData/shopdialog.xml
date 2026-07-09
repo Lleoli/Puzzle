@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allshopdialog>
+<shopdialogs>
+	<shopdialog type="label" key="shop_tab_item" text="�����̵�" price="" cost="0" active="TRUE">
+	</shopdialog>
+	<shopdialog type="label" key="shop_tab_video" text="������Ƶ" price="" cost="0" active="TRUE">
+	</shopdialog>
+	<shopdialog type="label" key="footer_label" text="��ǰ����" price="" cost="0" active="TRUE">
+	</shopdialog>
+	<shopdialog type="label" key="video_button" text="�ۿ���Ƶ" price="" cost="0" active="TRUE">
+	</shopdialog>
+	<shopdialog type="label" key="video_cost" text="3" price="" cost="3" active="TRUE">
+	</shopdialog>
+	<shopdialog type="product" key="0" text="·����ʾ" price="3" cost="3" active="TRUE">
+	</shopdialog>
+	<shopdialog type="product" key="1" text="����10��" price="6" cost="6" active="TRUE">
+	</shopdialog>
+	<shopdialog type="product" key="2" text="�����ؿ�" price="24" cost="24" active="TRUE">
+	</shopdialog>
+	<shopdialog type="product" key="3" text="С���*3" price="1" cost="1" active="TRUE">
+	</shopdialog>
+	<shopdialog type="product" key="4" text="СèƤ��" price="99" cost="99" active="TRUE">
+	</shopdialog>
+</shopdialogs>
+</allshopdialog>
