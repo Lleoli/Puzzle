@@ -11,7 +11,9 @@ public class MainController : BaseController
     public Tutorial tutorialPrefab;
 
     private Tutorial firstLevelTutorial;
-    private static readonly Vector3 FirstLevelTutorialTilePosition = new Vector3(2, 2, 0);
+    private Coroutine catMidCoroutine;
+    private const float CatMidSoundInterval = 4f;
+    private static readonly Vector3 FirstLevelTutorialTilePosition = new Vector3(2, 3, 0);
     private static readonly Vector3 FirstLevelTutorialMoveDirection = Vector3.left;
 
     protected override void Awake()
@@ -24,6 +26,7 @@ public class MainController : BaseController
     {
         base.Start();
 
+        Prefs.currentMode = Level.LevelMode.Star.ToString();
         var level = Superpow.Utils.GetLevel(Prefs.currentMode, Prefs.currentWorld, Prefs.currentLevel);
         Board.instance.LoadLevel(level);
 
@@ -33,8 +36,19 @@ public class MainController : BaseController
 
         Superpow.Utils.SetMusic();
 
+        catMidCoroutine = StartCoroutine(PlayCatMidPeriodically());
+
 
         StartCoroutine(ShowFirstLevelTutorialIfNeeded());
+    }
+
+    private void OnDestroy()
+    {
+        if (catMidCoroutine != null)
+        {
+            StopCoroutine(catMidCoroutine);
+            catMidCoroutine = null;
+        }
     }
 
     public void OnComplete()
@@ -132,9 +146,21 @@ public class MainController : BaseController
         return IsFirstLevelTutorialLevel() && !Tutorial.IsFirstLevelTutorialDone();
     }
 
+    private IEnumerator PlayCatMidPeriodically()
+    {
+        WaitForSeconds wait = new WaitForSeconds(CatMidSoundInterval);
+        while (true)
+        {
+            yield return wait;
+
+            if (!isComplete && Sound.instance != null)
+                Sound.instance.PlayCatMid();
+        }
+    }
+
     private bool IsFirstLevelTutorialLevel()
     {
-        return Prefs.currentMode == Level.LevelMode.Classic.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
+        return Prefs.currentMode == Level.LevelMode.Star.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
     }
 
     private void StopFirstLevelTutorial()

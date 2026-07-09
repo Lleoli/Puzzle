@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class Prefs
 { 
     public static string currentMode
     {
-        get { return PlayerPrefs.GetString("currentMode", Level.LevelMode.Classic.ToString()); }
+        get { return PlayerPrefs.GetString("currentMode", Level.LevelMode.Star.ToString()); }
         set { PlayerPrefs.SetString("currentMode", value); }
     }
 

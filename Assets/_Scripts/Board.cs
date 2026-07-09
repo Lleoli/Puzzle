@@ -21,7 +21,7 @@ public class Board : MonoBehaviour
     private const int FirstLevelHiddenCoinReward = 99;
     private const string MoveLimitExceededEffectName = "CFX2_EnemyDeathSkull_Ground";
     private const string CoinCollectEffectName = "CFX2_Expression_Loving";
-    private static readonly Vector3 FirstLevelHiddenCoinTilePosition = new Vector3(2, 2, 0);
+    private static readonly Vector3 FirstLevelHiddenCoinTilePosition = new Vector3(2, 3, 0);
 
     private List<AMove> moves = new List<AMove>();
     private Tile startTile, goalTile;
@@ -175,16 +175,16 @@ public class Board : MonoBehaviour
 
     private bool ShouldGiveFirstLevelHiddenCoin(Tile tile)
     {
-        return IsClassicFirstLevel() &&
+        return IsStarFirstLevel() &&
                tile != null &&
                tile.p != null &&
                tile.p.type == Tile.Type.Normal &&
                tile.position == FirstLevelHiddenCoinTilePosition;
     }
 
-    private bool IsClassicFirstLevel()
+    private bool IsStarFirstLevel()
     {
-        return Prefs.currentMode == Level.LevelMode.Classic.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
+        return Prefs.currentMode == Level.LevelMode.Star.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
     }
 
     private void SetStarPosition(Tile tile, GameObject star)

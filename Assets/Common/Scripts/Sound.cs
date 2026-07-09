@@ -6,7 +6,7 @@ public class Sound : MonoBehaviour
 {
     public AudioSource audioSource, loopAudioSource;
     public enum Button { Default };
-    public enum Others { Slide, Win, GetStar, BallEnd, Star1, Star2, Star3 };
+    public enum Others { Slide, Win, GetStar, BallEnd, Star1, Star2, Star3, CatMid };
     public enum Cue { TileMove, ButtonClick, WinDialog, MoveLimitExceeded, StarCollected };
 
     public static Action<Cue> onCueRequested;
@@ -71,6 +71,11 @@ public class Sound : MonoBehaviour
     {
         RequestCue(Cue.StarCollected);
         Play(Others.GetStar);
+    }
+
+    public void PlayCatMid()
+    {
+        Play(Others.CatMid);
     }
 
     private void RequestCue(Cue cue)
