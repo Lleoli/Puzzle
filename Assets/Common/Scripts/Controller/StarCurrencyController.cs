@@ -5,6 +5,7 @@ public static class StarCurrencyController
 {
     private const string SpentStarsKey = "spent_stars";
     private const string BonusStarsKey = "bonus_stars";
+    private const string BonusRewardClaimedPrefix = "bonus_reward_claimed_";
 
     public static Action onBalanceChanged;
 
@@ -20,6 +21,29 @@ public static class StarCurrencyController
 
         SetBonusStars(GetBonusStars() + value);
         NotifyBalanceChanged();
+    }
+
+    public static bool TryCreditBonusStarsOnce(string rewardKey, int value)
+    {
+        if (string.IsNullOrEmpty(rewardKey) || value <= 0)
+            return false;
+
+        string claimedKey = GetBonusRewardClaimedKey(rewardKey);
+        if (PlayerPrefs.GetInt(claimedKey) == 1)
+            return false;
+
+        PlayerPrefs.SetInt(claimedKey, 1);
+        SetBonusStars(GetBonusStars() + value);
+        NotifyBalanceChanged();
+        return true;
+    }
+
+    public static bool IsBonusRewardClaimed(string rewardKey)
+    {
+        if (string.IsNullOrEmpty(rewardKey))
+            return false;
+
+        return PlayerPrefs.GetInt(GetBonusRewardClaimedKey(rewardKey)) == 1;
     }
 
     public static bool DebitBalance(int value)
@@ -54,6 +78,11 @@ public static class StarCurrencyController
         }
 
         return total;
+    }
+
+    private static string GetBonusRewardClaimedKey(string rewardKey)
+    {
+        return BonusRewardClaimedPrefix + rewardKey;
     }
 
     private static int GetBonusStars()

@@ -6,6 +6,7 @@ public class HomeController : BaseController {
     private const int CLASSIC = 1;
     private const int STAR = 2;
     private const int FACEBOOK = 3;
+    private const string StartAnimationPlayedKey = "home_start_animation_played";
 
     public GameObject playButton;
     public Image playIcon;
@@ -13,17 +14,32 @@ public class HomeController : BaseController {
 
     private bool startAnimationPrepared;
     private bool startAnimationPlayed;
+    private bool hasPlayButtonFinalPosition;
+    private Vector3 playButtonFinalPosition;
 
     protected override void Start()
     {
         base.Start();
         playIcon.sprite = Prefs.continuePlayMode == "Star" ? starIcon : classicIcon;
 
-        PrepareStartAnimation();
-        if (FindObjectOfType<VideoPlay>() == null)
-            PlayStartAnimation();
+        CachePlayButtonFinalPosition();
+        if (HasStartAnimationCache())
+        {
+            ShowStartAnimationFinalState();
+        }
+        else
+        {
+            PrepareStartAnimation();
+            if (FindObjectOfType<VideoPlay>() == null)
+                PlayStartAnimation();
+        }
 
         Superpow.Utils.SetMusic();
+    }
+
+    public static bool HasStartAnimationCache()
+    {
+        return PlayerPrefs.GetInt(StartAnimationPlayedKey) == 1;
     }
 
     public void PlayStartAnimation()
@@ -31,9 +47,28 @@ public class HomeController : BaseController {
         if (startAnimationPlayed || playButton == null)
             return;
 
+        if (HasStartAnimationCache())
+        {
+            ShowStartAnimationFinalState();
+            return;
+        }
+
         PrepareStartAnimation();
         startAnimationPlayed = true;
+        SaveStartAnimationCache();
         iTween.MoveBy(playButton, iTween.Hash("amount", Vector3.right * 5, "easetype", iTween.EaseType.easeOutBack, "time", 0.4f, "delay", 0.4f));
+    }
+
+    public void ShowStartAnimationFinalState()
+    {
+        if (playButton == null)
+            return;
+
+        CachePlayButtonFinalPosition();
+        iTween.Stop(playButton);
+        playButton.transform.position = playButtonFinalPosition;
+        startAnimationPrepared = false;
+        startAnimationPlayed = true;
     }
 
     private void PrepareStartAnimation()
@@ -41,8 +76,24 @@ public class HomeController : BaseController {
         if (startAnimationPrepared || playButton == null)
             return;
 
-        playButton.transform.position = playButton.transform.position - Vector3.right * 5;
+        CachePlayButtonFinalPosition();
+        playButton.transform.position = playButtonFinalPosition - Vector3.right * 5;
         startAnimationPrepared = true;
+    }
+
+    private void CachePlayButtonFinalPosition()
+    {
+        if (hasPlayButtonFinalPosition || playButton == null)
+            return;
+
+        playButtonFinalPosition = playButton.transform.position;
+        hasPlayButtonFinalPosition = true;
+    }
+
+    private void SaveStartAnimationCache()
+    {
+        PlayerPrefs.SetInt(StartAnimationPlayedKey, 1);
+        PlayerPrefs.Save();
     }
 
     public void OnClick(int index)

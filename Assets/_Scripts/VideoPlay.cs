@@ -42,6 +42,15 @@ public class VideoPlay : MonoBehaviour
 
     private void Start()
     {
+        if (ShouldSkipCachedHomeStartVideo())
+        {
+            StopVideo();
+            HomeController homeController = FindObjectOfType<HomeController>();
+            if (homeController != null)
+                homeController.ShowStartAnimationFinalState();
+            return;
+        }
+
         if (playOnStart)
         {
             PlayVideo();
@@ -117,6 +126,11 @@ public class VideoPlay : MonoBehaviour
 
         if (hideAfterFinished && videoRoot != null)
             videoRoot.SetActive(false);
+    }
+
+    private bool ShouldSkipCachedHomeStartVideo()
+    {
+        return playOnStart && playStartAnimationAfterFinished && HomeController.HasStartAnimationCache() && FindObjectOfType<HomeController>() != null;
     }
 
     private void EnsureVideoReference()

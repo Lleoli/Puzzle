@@ -176,7 +176,8 @@ public class Board : MonoBehaviour
         if (ShouldGiveFirstLevelHiddenCoin(tile))
         {
             tile.hiddenCoinReward = FirstLevelHiddenCoinReward;
-            tile.hiddenCoinCollected = false;
+            tile.hiddenCoinRewardKey = GetHiddenCoinRewardKey(tile);
+            tile.hiddenCoinCollected = StarCurrencyController.IsBonusRewardClaimed(tile.hiddenCoinRewardKey);
         }
     }
 
@@ -192,6 +193,13 @@ public class Board : MonoBehaviour
     private bool IsStarFirstLevel()
     {
         return Prefs.currentMode == Level.LevelMode.Star.ToString() && Prefs.currentWorld == 0 && Prefs.currentLevel == 0;
+    }
+
+    private string GetHiddenCoinRewardKey(Tile tile)
+    {
+        int x = tile == null ? 0 : Mathf.RoundToInt(tile.position.x);
+        int y = tile == null ? 0 : Mathf.RoundToInt(tile.position.y);
+        return "hidden_coin_" + Prefs.currentMode + "_" + Prefs.currentWorld + "_" + Prefs.currentLevel + "_" + x + "_" + y;
     }
 
     private void SetStarPosition(Tile tile, GameObject star)
@@ -453,8 +461,14 @@ public class Board : MonoBehaviour
         if (tile == null || tile.hiddenCoinCollected || tile.hiddenCoinReward <= 0)
             return;
 
+        string rewardKey = string.IsNullOrEmpty(tile.hiddenCoinRewardKey) ? GetHiddenCoinRewardKey(tile) : tile.hiddenCoinRewardKey;
+        if (!StarCurrencyController.TryCreditBonusStarsOnce(rewardKey, tile.hiddenCoinReward))
+        {
+            tile.hiddenCoinCollected = true;
+            return;
+        }
+
         tile.hiddenCoinCollected = true;
-        StarCurrencyController.CreditBonusStars(tile.hiddenCoinReward);
 
         if (Toast.instance != null)
             Toast.instance.ShowMessage("+" + tile.hiddenCoinReward);
