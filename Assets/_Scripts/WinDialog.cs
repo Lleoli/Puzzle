@@ -16,6 +16,7 @@ public class WinDialog : Dialog {
         levelName.text = "level " + (Prefs.currentLevel + 1);
         ApplyResultImageState();
         ApplyNextButtonState();
+        ApplyStarsContainerState();
         StartCoroutine(ShowStars());
     }
 
@@ -23,6 +24,7 @@ public class WinDialog : Dialog {
     {
         ApplyResultImageState();
         ApplyNextButtonState();
+        ApplyStarsContainerState();
         base.Show();
     }
 
@@ -31,6 +33,7 @@ public class WinDialog : Dialog {
         hideNextButton = true;
         ApplyResultImageState();
         ApplyNextButtonState();
+        ApplyStarsContainerState();
         HideStars();
     }
 
@@ -62,6 +65,12 @@ public class WinDialog : Dialog {
             ImageNext.SetActive(!hideNextButton);
     }
 
+    private void ApplyStarsContainerState()
+    {
+        GameObject starsContainer = FindChildByName(transform, "StarBacks");
+        if (starsContainer != null)
+            starsContainer.SetActive(!hideNextButton);
+    }
     private GameObject FindChildByName(Transform parent, string childName)
     {
         foreach (Transform child in parent)
