@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,7 +38,7 @@ public class WorldItem : MonoBehaviour
         {
             Prefs.currentWorld = world;
             CUtils.LoadScene(2, true);
-            Sound.instance.PlayButton();
+            if (Sound.instance != null) Sound.instance.PlayButtonClick();
         }
         else
         {

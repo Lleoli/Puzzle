@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -105,7 +105,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 dragging = false;
 
                 if (Sound.instance != null)
-                    Sound.instance.Play(Sound.Others.Slide);
+                    Sound.instance.PlayTileMove();
             }
         }
     }
@@ -126,7 +126,7 @@ public class Tile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 iTween.MoveTo(gameObject, iTween.Hash("position", GetLocalPosition(newPosition), "isLocal", true, "time", 0.03f, "oncomplete", "OnTileMoveComplete"));
 
                 if (Sound.instance != null)
-                    Sound.instance.Play(Sound.Others.Slide);
+                    Sound.instance.PlayTileMove();
             }
         }
         dragging = false;

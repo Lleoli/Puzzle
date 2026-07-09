@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class TabDialog : Dialog
 {
@@ -11,7 +11,7 @@ public class TabDialog : Dialog
 
     public void TabChanged(int index)
     {
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
         currentTab = index;
         for (int i = 0; i < tabButtons.Length; i++)
         {

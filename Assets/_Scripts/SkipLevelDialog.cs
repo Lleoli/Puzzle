@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine.UI;
 
 public class SkipLevelDialog : Dialog
@@ -13,7 +13,7 @@ public class SkipLevelDialog : Dialog
 
     public void OnYes()
     {
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
         bool result = CurrencyController.DebitBalance(ConfigController.Config.skipLevelCost);
         if (result)
         {

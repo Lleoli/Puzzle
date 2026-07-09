@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -7,9 +7,9 @@ public class OkDialog : Dialog {
     public GameObject title, message;
     public virtual void OnOkClick()
     {
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
         if (onOkClick != null) onOkClick();
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
         Close();
     }
 }

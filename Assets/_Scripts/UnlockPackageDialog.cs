@@ -11,7 +11,7 @@ public class UnlockPackageDialog : Dialog
 
     public void OnUnlock()
     {
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
         Close();
     }
 }

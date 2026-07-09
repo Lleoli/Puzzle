@@ -26,7 +26,7 @@ public class ShopDialog : Dialog
 
     public void OnBuyProduct(int index)
     {
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
 
         shopdialog item = GetProduct(index);
         if (item == null)

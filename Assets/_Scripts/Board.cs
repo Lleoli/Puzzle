@@ -227,7 +227,7 @@ public class Board : MonoBehaviour
         moveCursor--;
 
         UpdateUndoRedoButton();
-        Sound.instance.Play(Sound.Others.Slide);
+        Sound.instance.PlayTileMove();
     }
 
     public void RedoMove()
@@ -244,7 +244,7 @@ public class Board : MonoBehaviour
         currentMove++;
 
         UpdateUndoRedoButton();
-        Sound.instance.Play(Sound.Others.Slide);
+        Sound.instance.PlayTileMove();
     }
 
     public bool AddTargetMoves(int amount)
@@ -359,6 +359,9 @@ public class Board : MonoBehaviour
             return;
 
         moveLimitExceeded = true;
+        if (Sound.instance != null)
+            Sound.instance.PlayMoveLimitExceeded();
+
         PlayMoveLimitExceededEffect(tile);
 
         undoButton.interactable = false;
@@ -450,7 +453,7 @@ public class Board : MonoBehaviour
             Toast.instance.ShowMessage("+" + tile.hiddenCoinReward);
 
         if (Sound.instance != null)
-            Sound.instance.Play(Sound.Others.GetStar);
+            Sound.instance.PlayStarCollected();
 
         PlayCoinCollectEffect();
     }
@@ -523,7 +526,7 @@ public class Board : MonoBehaviour
             Timer.Schedule(this, 0.1f, () =>
             {
                 CollectStar(tile.star);
-                Sound.instance.Play(Sound.Others.GetStar);
+                Sound.instance.PlayStarCollected();
             });
         }
 
@@ -617,7 +620,7 @@ public class Board : MonoBehaviour
     public void ShowHint()
     {
         if (hintBeginShowing || MainController.instance.isComplete) return;
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
 
         if (hintShowing)
         {

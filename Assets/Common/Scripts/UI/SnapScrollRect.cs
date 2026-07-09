@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -105,13 +105,13 @@ public class SnapScrollRect : MonoBehaviour, IDragHandler, IEndDragHandler, IBeg
     public void NextPage()
     {
         MoveToPage(index + 1);
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
     }
 
     public void PreviousPage()
     {
         MoveToPage(index - 1);
-        Sound.instance.PlayButton();
+        if (Sound.instance != null) Sound.instance.PlayButtonClick();
     }
 
     public void MoveToPage(int pageIndex)

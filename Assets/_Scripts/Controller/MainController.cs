@@ -7,7 +7,7 @@ public class MainController : BaseController
 {
     public static MainController instance;
     public bool isComplete;
-    public Transform skipLevelTr, hintTr;
+    public Transform hintTr;
     public Tutorial tutorialPrefab;
 
     private Tutorial firstLevelTutorial;
@@ -33,10 +33,6 @@ public class MainController : BaseController
 
         Superpow.Utils.SetMusic();
 
-        Timer.Schedule(this, 0, () =>
-        {
-            skipLevelTr.transform.SetX(hintTr.transform.position.x);
-        });
 
         StartCoroutine(ShowFirstLevelTutorialIfNeeded());
     }
@@ -74,7 +70,7 @@ public class MainController : BaseController
         Timer.Schedule(this, 0.5f, () =>
         {
             DialogController.instance.ShowDialog(DialogType.Win);
-            Sound.instance.Play(Sound.Others.Win);
+            Sound.instance.PlayWinDialog();
         });
     }
 
